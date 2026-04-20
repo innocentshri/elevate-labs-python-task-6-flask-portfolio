@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Shri Portfolio</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <nav>
+        <h2>Shri</h2>
+    </nav>
+
+    <div class="container">
+
+        <h1>Shri Gudadhe</h1>
+        <p class="subtitle">Python Developer | Cybersecurity | Builder</p>
+
+        <section>
+            <h2>About</h2>
+            <p>I build real projects and solve practical problems using Python and web technologies.</p>
+        </section>
+
+        <section>
+            <h2>Projects</h2>
+            <div class="projects">
+
+                <a href="https://docintel-gguj.onrender.com" target="_blank" class="card">
+                    DocIntel → Document Analyzer
+                </a>
+
+                <a href="https://pulsewatch-n055.onrender.com" target="_blank" class="card">
+                    PulseWatch → System Monitor
+                </a>
+
+                <a href="https://review-radar-clean.vercel.app" target="_blank" class="card">
+                    Review Radar → Sentiment Analyzer
+                </a>
+
+            </div>
+        </section>
+
+        <section>
+            <h2>Contact</h2>
+
+            {% if success %}
+            <p class="success">Message sent successfully.</p>
+            {% endif %}
+
+            <form action="/contact" method="POST">
+                <input type="text" name="name" placeholder="Name" required>
+                <input type="email" name="email" placeholder="Email" required>
+                <textarea name="message" placeholder="Message" required></textarea>
+                <button type="submit">Send</button>
+            </form>
+        </section>
+
+    </div>
+
+</body>
+
+</html>
